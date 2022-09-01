@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Controls controls;
     private Vector2 horizontalInput;
     private Rigidbody2D rb;
+    private Animator anim;
     public float speed, jumpHeight, groundDistance;
     public LayerMask groundLayer;
     public int jumps;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         controls = new Controls();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         jumpsPossible = 0;
     }
 
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
         if (hit.collider != null )
         {
             jumpsPossible = jumps-1;
+            anim.SetBool("jump", true);
             rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);   
         }
         else if(jumpsPossible > 0)
