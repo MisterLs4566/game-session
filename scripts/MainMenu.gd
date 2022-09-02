@@ -4,6 +4,8 @@ var isFullscreen
 
 func _ready():
 	isFullscreen = OS.window_fullscreen
+	$GreenTree/Sprite/AnimationPlayer.play("tree_anim")
+	$PinkTree/Sprite2/AnimationPlayer.play("tree_anim")
 
 func _on_Return_button_down():
 	$MainMenu.show()
