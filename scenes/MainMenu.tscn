@@ -1,0 +1,199 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://menu_sprites/Splashscreen.png" type="Texture" id=1]
+[ext_resource path="res://default_env.tres" type="Environment" id=2]
+[ext_resource path="res://fonts/standard_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://menu_sprites/Button_Pressed.png" type="Texture" id=4]
+[ext_resource path="res://menu_sprites/Button.png" type="Texture" id=5]
+[ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://menu_sprites/Checkmark.png" type="Texture" id=7]
+[ext_resource path="res://scripts/MainMenu.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 6 )
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Splashscreen" type="TextureRect" parent="."]
+modulate = Color( 1.1, 1.1, 1.1, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 2 )
+
+[node name="Title" type="Label" parent="."]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -240.0
+margin_top = 132.0
+margin_right = 240.0
+margin_bottom = 180.0
+custom_fonts/font = ExtResource( 3 )
+text = "JUMPY JUMP"
+
+[node name="MainMenu" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="StartGame" type="TextureButton" parent="MainMenu"]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -166.0
+margin_top = -27.0
+margin_right = 166.0
+margin_bottom = 23.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="MainMenu/StartGame"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -12.0
+margin_right = 120.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 1 )
+text = "START GAME"
+
+[node name="Settings" type="TextureButton" parent="MainMenu"]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -166.0
+margin_top = 68.0
+margin_right = 166.0
+margin_bottom = 118.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="Label2" type="Label" parent="MainMenu/Settings"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -96.0
+margin_top = -12.0
+margin_right = 96.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 1 )
+text = "SETTINGS"
+
+[node name="Quit" type="TextureButton" parent="MainMenu"]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -166.0
+margin_top = 166.0
+margin_right = 166.0
+margin_bottom = 216.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="Label3" type="Label" parent="MainMenu/Quit"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -96.0
+margin_top = -12.0
+margin_right = 96.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 1 )
+text = "ALT + F4"
+
+[node name="SettingsMenu" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="Fullscreen" type="TextureButton" parent="SettingsMenu"]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -166.0
+margin_top = -25.0
+margin_right = 166.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 7 )
+expand = true
+stretch_mode = 4
+
+[node name="Label1" type="Label" parent="SettingsMenu/Fullscreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -96.0
+margin_top = -12.0
+margin_right = 96.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 1 )
+text = "FULLSCREEN"
+
+[node name="Return" type="TextureButton" parent="SettingsMenu"]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -166.0
+margin_top = 166.0
+margin_right = 166.0
+margin_bottom = 216.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+expand = true
+
+[node name="Label3" type="Label" parent="SettingsMenu/Return"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -72.0
+margin_top = -12.0
+margin_right = 72.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 1 )
+text = "RETURN"
+
+[connection signal="button_down" from="MainMenu/Settings" to="." method="_on_Settings_button_down"]
+[connection signal="button_down" from="MainMenu/Quit" to="." method="_on_Quit_button_down"]
+[connection signal="button_down" from="SettingsMenu/Fullscreen" to="." method="_on_Fullscreen_button_down"]
+[connection signal="button_down" from="SettingsMenu/Return" to="." method="_on_Return_button_down"]
