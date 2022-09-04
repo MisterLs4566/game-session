@@ -64,7 +64,6 @@ public class PlayerController : MonoBehaviour
         if (hit.collider != null )
         {
             jumpsPossible = jumps-1;
-            anim.SetBool("jump", true);
             rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);   
         }
         else if(jumpsPossible > 0)
