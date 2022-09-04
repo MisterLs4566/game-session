@@ -28,3 +28,7 @@ func _on_Fullscreen_button_down():
 
 func _on_Quit_button_down():
 	get_tree().quit()
+
+
+func _on_StartGame_button_down():
+	get_tree().change_scene("res://scenes/MainGame.tscn")
